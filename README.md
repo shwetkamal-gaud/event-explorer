@@ -52,6 +52,5 @@ You can start editing the main page by modifying `src/pages/index.tsx`. The app 
 - `src/context/` - ContextAPI for drak and light theme switching
 
 ## Deployed Link
-```bahs
 [Event Explorer Link](https://event-explorer-beta.vercel.app/)
-```
+
