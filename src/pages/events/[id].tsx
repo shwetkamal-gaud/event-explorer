@@ -1,15 +1,20 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import { events, Event } from "@/data/events";
-import Head from "next/head";
 import GlassCard from "@/components/GlassCard";
+import { ChevronLeft } from "lucide-react";
+import { useRouter } from "next/router";
 
 export default function EventDetail({ event }: { event: Event }) {
+    const router = useRouter()
     return (
-        <main className="p-4 flex items-center justify-center flex-grow h-full w-full">
-            <GlassCard className="">
-                <main className="max-w-3xl mx-auto p-4">
+        <main className="p-4 flex items-center dark:text-white text-black justify-center flex-grow h-full w-full">
+            <GlassCard className="items-start">
+                <button onClick={() => router.back()} className="rounded-full p-1 bg-[#eeb2b6] dark:bg-[#310320] inline-block">
+                    <ChevronLeft/>
+                </button>
+                <main className="p-2">
                     <h1 className="text-3xl font-bold mb-2">{event.title}</h1>
-                    <p className="text-gray-600">{event.date} | {event.location}</p>
+                    <p className="text-gray-600 dark:text-gray-300">{event.date} | {event.location}</p>
                     <section className="mt-4">{event.fullDetails}</section>
                 </main>
             </GlassCard>
