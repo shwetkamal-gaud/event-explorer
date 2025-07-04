@@ -5,10 +5,10 @@ import Link from 'next/link'
 
 const EventCard = ({ event }: { event: Event }) => {
     return (
-        <GlassCard className='flex flex-col justify-between items-start'>
+        <GlassCard className='flex flex-col justify-between items-start dark:text-white text-black'>
             <div>
                 <h2 className="text-xl font-semibold">{event.title}</h2>
-                <p className="text-sm text-gray-500">{event.date} – {event.location}</p>
+                <p className="text-sm text-gray-500 drak:text-gray-300">{event.date} – {event.location}</p>
             </div>
             <p className="mt-2">{event.description}</p>
             <Link href={`/events/${event.id}`} className="text-blue-600 mt-2 ">
